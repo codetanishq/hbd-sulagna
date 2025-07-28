@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Coming Soon</title>
+  <style>
+    /* Center content and style */
+    body {
+      background: #ffe6f0;
+      color: #e75480;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+      padding: 0 1em;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.5em;
+    }
+    #countdown {
+      font-size: 3em;
+      font-weight: bold;
+      margin: 0.5em 0 1em;
+      letter-spacing: 1.5px;
+    }
+    p {
+      font-size: 1.25em;
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Coming Soon!</h1>
+  <p>Countdown to the special day:</p>
+  <div id="countdown">Loading...</div>
+
+  <script>
+    // Set your countdown target time here (adjust timezone if needed)
+    const countdownDate = new Date("August 1, 2025 23:59:59").getTime();
+
+    const countdownEl = document.getElementById('countdown');
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = countdownDate - now;
+
+      if (diff <= 0) {
+        // Countdown complete: redirect to main site page
+        window.location.href = 'index.html';
+      } else {
+        // Calculate time parts
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        // Format with leading zeros
+        const hoursStr = hours.toString().padStart(2, '0');
+        const minutesStr = minutes.toString().padStart(2, '0');
+        const secondsStr = seconds.toString().padStart(2, '0');
+
+        countdownEl.textContent = `${days}d ${hoursStr}h ${minutesStr}m ${secondsStr}s`;
+      }
+    }
+
+    // Initial call
+    updateCountdown();
+
+    // Update every second
+    setInterval(updateCountdown, 1000);
+  </script>
+
+</body>
+</html>

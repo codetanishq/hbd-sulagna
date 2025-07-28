@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Couple Trivia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h2>Couple Trivia!</h2>
+    <div id="game">
+      <div id="question"></div>
+      <div id="answers"></div>
+      <div id="feedback"></div>
+    </div>
+    <button onclick="window.location.href='index.html'">Restart</button>
+  </div>
+  <script src="app.js"></script>
+  <script>
+function openMusicWindow() {
+  // Only open if not already opened
+  if (!window.musicWindowOpened || window.musicWindowClosed) {
+    const musicWindow = window.open(
+      'music.html',
+      'musicPlayer',
+      'width=1,height=1,left=-1000,top=-1000'
+    );
+    window.musicWindowOpened = true;
+    window.musicWindowClosed = false;
+  }
+}
+
+// Automatically open the popup on page load
+window.addEventListener('load', () => {
+  openMusicWindow();
+});
+</script>
+
+</body>
+</html>

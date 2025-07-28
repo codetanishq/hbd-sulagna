@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Memories</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <style>
+    .container {
+        max-width: 51em;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="container">
+    <h2>Our Memories</h2>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="images/1.png"></div>
+        <div class="swiper-slide"><img src="images/2.jpg"></div>
+        <div class="swiper-slide"><img src="images/3.jpeg"></div>
+        <div class="swiper-slide"><img src="images/4.jpg"></div>
+        <!-- <div class="swiper-slide"><img src="images/5.jpg"></div> -->
+        <div class="swiper-slide"><img src="images/6.jpg"></div>
+        <div class="swiper-slide"><img src="images/7.jpg"></div>
+        <div class="swiper-slide"><img src="images/8.jpg"></div>
+        <div class="swiper-slide"><img src="images/9.jpg"></div>
+        <div class="swiper-slide"><img src="images/10.jpg"></div>
+        <div class="swiper-slide"><img src="images/11.jpg"></div>
+        <div class="swiper-slide"><img src="images/12.jpg"></div>
+        <div class="swiper-slide"><img src="images/13.jpg"></div>
+        <div class="swiper-slide"><img src="images/14.jpg"></div>
+        <div class="swiper-slide"><img src="images/15.jpg"></div>
+        <div class="swiper-slide"><img src="images/16.jpg"></div>
+        <div class="swiper-slide"><img src="images/17.jpg"></div>
+        <div class="swiper-slide"><img src="images/18.jpg"></div>
+        <div class="swiper-slide"><img src="images/19.jpg"></div>
+        <div class="swiper-slide"><img src="images/21.jpg"></div>
+        <div class="swiper-slide"><img src="images/22.jpg"></div>
+        <div class="swiper-slide"><img src="images/23.jpg"></div>
+        <div class="swiper-slide"><img src="images/24.jpg"></div>
+        <div class="swiper-slide"><img src="images/25.jpg"></div>
+        <div class="swiper-slide"><img src="images/26.jpg"></div>
+        <div class="swiper-slide"><img src="images/27.jpg"></div>
+        <div class="swiper-slide"><img src="images/28.jpg"></div>
+        <div class="swiper-slide"><img src="images/29.jpg"></div>
+        <div class="swiper-slide"><img src="images/30.jpg"></div>
+        <div class="swiper-slide"><img src="images/31.jpeg"></div>
+        <div class="swiper-slide"><img src="images/32.jpeg"></div>
+        <!-- Add more slides as needed -->
+      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <button onclick="window.location.href='quiz.html'">Next &rarr;</button>
+  </div>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    new Swiper('.swiper-container', {
+      slidesPerView: 2,
+      spaceBetween: 25,
+      loop: true,
+      autoplay: {
+        delay: 2200,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      }
+    });
+  </script>
+
+</body>
+</html>

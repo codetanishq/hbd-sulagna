@@ -1,0 +1,206 @@
+/* Base styles as before ... */
+
+body {
+  background: #ffe6f0;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  padding: 2em;
+  margin: 0;
+  overflow-x: hidden;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.container {
+  background: #fff;
+  margin: auto;
+  max-width: 600px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px #ffd1dc;
+  padding: 2em;
+  box-sizing: border-box;
+}
+
+/* Responsive Typography */
+h1, h2 {
+  color: #e75480;
+  margin-top: 0;
+}
+
+button {
+  background: #e75480;
+  color: #fff;
+  padding: 0.7em 2em;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1em;
+  margin: 2em 0 0 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #ad1457;
+}
+
+#cake-area {
+  margin: 2em 0;
+}
+
+/* Candle Images */
+.candle {
+  width: 35px;
+  cursor: pointer;
+  transition: opacity 0.4s;
+  margin: 0 4px;
+}
+
+.candle.out {
+  opacity: 0.3;
+}
+
+/* Cake Image */
+#cake-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Confetti Canvas */
+#confetti-canvas {
+  position: fixed;
+  z-index: 9;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Swiper Gallery */
+.swiper-container {
+ width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      position: relative;
+}
+
+.swiper-slide img {
+  width: 100%;
+      height: 250px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  /* width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.17);
+  margin: 0 auto; */
+}
+
+
+/* Responsive Media Queries */
+
+@media (max-width: 768px) {
+  body {
+    padding: 1em;
+    font-size: 15px;
+  }
+
+  .container {
+    max-width: 90%;
+    padding: 1.5em;
+  }
+
+  button {
+    padding: 0.6em 1.5em;
+    font-size: 0.9em;
+  }
+
+  #cake-img {
+    max-width: 90%;
+  }
+
+  .swiper-slide img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 1em 0.8em;
+    font-size: 14px;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 1em;
+    border-radius: 12px;
+  }
+
+  h1 {
+    font-size: 1.6em;
+  }
+
+  h2 {
+    font-size: 1.3em;
+  }
+
+  button {
+    width: 100%;
+    padding: 0.9em 1em;
+    font-size: 1em;
+    margin-top: 1.5em;
+  }
+
+  #cake-area {
+    margin: 1.5em 0;
+  }
+
+  .candles {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .candle {
+    width: 28px;
+    margin: 0 3px 6px;
+  }
+
+  /* Swiper adjustments */
+  .swiper-slide img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* For the canvas in index.html (heart animation) */
+#heart-canvas {
+  width: 100vw !important;
+  height: 100vh !important;
+  display: block;
+}
+.start-screen {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff0f5;
+}
+#intro-text {
+  position: absolute;
+  top: 70vh;
+  left: 0;
+  width: 100vw;
+  text-align: center;
+  font-size: 2.3em;
+  color: #e75480;
+  font-weight: bold;
+  opacity: 0;
+  letter-spacing: 2px;
+  text-shadow: 0 8px 30px #fff7, 0 1px 1px #5552;
+  z-index: 2; /* ← make sure it's above canvas */
+}

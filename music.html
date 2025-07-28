@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Music Player</title>
+</head>
+<body>
+  <audio id="bgMusic" autoplay loop>
+    <source src="audio/birthday_bg1.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+  <script>
+    // Resume from last time if available
+    const audio = document.getElementById("bgMusic");
+    const savedTime = sessionStorage.getItem("audioTime");
+    if (savedTime) {
+      audio.currentTime = parseFloat(savedTime);
+    }
+
+    audio.play();
+
+    setInterval(() => {
+      sessionStorage.setItem("audioTime", audio.currentTime);
+    }, 1000);
+  </script>
+</body>
+</html>
